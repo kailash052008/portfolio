@@ -6,7 +6,9 @@
   <title>Welcome - Kailash Kanth</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/jpeg" href="IMG_3661.jpeg">
+  <link rel="icon" type="image/png" href="Elegante Logo _N.K._ en Gradiente.png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+
   <style>
     body::before {
       content: "";
@@ -46,14 +48,85 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    .animated-text-gradient {
-      background: linear-gradient(90deg, #48ec4b, #ff3700, #272adb);
-      background-size: 300% 300%;
-      animation: gradientText 6s ease infinite;
+    
+.animated-text-gradient {
+  background: linear-gradient(
+    90deg, /* left to right gradient */
+    #48ec4b,
+    #ff3700,
+    #272adb,
+    #48ec4b
+  );
+  background-size: 200% 200%;
+  animation: gradientText 8s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+    .social-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+    }
+    /* Gradient Text Animation */
+    .gradient-text {
+      font-size: 1.25rem; /* Increase text size */
+      font-weight: bold;
+      text-align: left;
+      background: linear-gradient(270deg, #ff6a00, #ffcc00, #00ffcc, #ff00ff);
+      background-size: 800% 800%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
     }
+
+    /* Gradient Animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .breathing-glow-button {
+  display: inline-block;
+  animation: button-breathe 2.5s ease-in-out infinite,
+             button-glow 2.5s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform, box-shadow;
+}
+
+@keyframes button-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
+}
+
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.6), 
+                0 0 30px rgba(139, 92, 246, 0.4),
+                0 0 45px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.9), 
+                0 0 50px rgba(139, 92, 246, 0.7),
+                0 0 70px rgba(236, 72, 153, 0.5);
+  }
+}
+    .tamil-text {
+      font-family: 'Noto Sans Tamil', sans-serif;
+    }
+    .breathing-img {
+  animation: breathing 4s ease-in-out infinite;
+}
+
+@keyframes breathing {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+                                                                     
+
   </style>
+
 </head>
 <body class="font-sans">
   <!-- Header -->
@@ -74,12 +147,23 @@
     <div class="flex-1">
       <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Welcome to My Webpage</h2>
       <p class="mb-6 text-lg text-gray-300">Turning raw data into powerful insights with Python, C, C++, Java, HTML, CSS, JavaScript, and a mastery of Data Structures & Algorithms — shaping the future as a Data Scientist,Full-Stack Developer,Game Developer,Software Developer     .</p>
-      <a href="about.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90">Get Started</a>
+      <a href="about.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90 breathing-glow-button">Get Started</a>
     </div>
     <div class="flex-1">
-      <img src="IMG20250529124751.jpg" alt="Hero Image" class="rounded-lg shadow-lg" />
+      <img src="IMG20250529124751.jpg" alt="Hero Image" class="rounded-lg shadow-lg breathing-img" />
     </div>
   </section>
+  <section class="max-w-7xl mx-auto px-4">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h3 class="quote-heading text-xl font-bold mb-2 text-align">குறள் எண் 1</h3>
+      <p class="quote-text gradient-text">
+        <span>அகர முதல எழுத்தெல்லாம் ஆதி</span><br>
+        <span>பகவன் முதற்றே உலகு.</span>
+      </p>
+    </div>
+  </section>
+
+
   <!-- Features Section -->
   <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
     <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -114,6 +198,8 @@ Failure is the stepping stone to success</p>
     <div class="max-w-7xl mx-auto grid md:grid-cols-4 text-center gap-6">
       <div>
        <a href="https://instagram.com/kailash_.kanth" target="_blank" class="fab fa-instagram" style="font-size: 50px; color: white;"></a><br>Instagram
+
+
       </div>
       <div>
         <i class="fab fa-youtube" style="font-size: 50px; color: white;"></i><br>Youtube
@@ -123,18 +209,64 @@ Failure is the stepping stone to success</p>
       </div>
       <div>
         <i class="fab fa-file-alt" style="font-size: 50px; color: white;"></i><br>Resume
-      </div>
+      </div>  
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-900 p-6 mt-12">
     <div class="max-w-7xl mx-auto text-center text-gray-400">
-      <p>&copy; 2025 N.KAILASH. All rights reserved.</p>
+      <p>&copy; 2025 Your Brand. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+    const quotesData = [
+        { heading: "குறள் எண் 1", text: "அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு." },
+        { heading: "குறள் எண் 2", text: "கற்றதனால் ஆய பயனென்கொல் வாலறிவன் நற்றாள் தொழாஅர் எனின்." },
+        { heading: "குறள் எண் 3", text: "மலர்மிசை ஏகினான் மாணடி சேர்ந்தார் நிலமிசை நீடுவாழ் வார்." },
+        { heading: "குறள் எண் 4", text: "வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு யாண்டும் இடும்பை இல." },
+        { heading: "குறள் எண் 5", text: "இருள்சேர் இருவினையும் சேரா இறைவன் பொருள்சேர் புகழ்புரிந்தார் மாட்டு." },
+        { heading: "குறள் எண் 6", text: "பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க நெறிநின்றார் நீடுவாழ் வார்." },
+        { heading: "குறள் எண் 7", text: "தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால் மனக்கவலை மாற்றல் அரிது." },
+        { heading: "குறள் எண் 8", text: "அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால் பிறவாழி நீந்தல் அரிது." },
+        { heading: "குறள் எண் 9", text: "கோளில் பொறியின் குணமிலவே எண்குணத்தான் தாளை வணங்காத் தலை." },
+        { heading: "குறள் எண் 10", text: "பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார் இறைவன் அடிசேரா தார்." },
+
+    ];
+
+    const headingEl = document.querySelector(".quote-heading");
+    const textEl = document.querySelector(".quote-text");
+
+    // Force exactly 4 words in the first line
+    function formatQuoteWithBreak(quote) {
+        const words = quote.trim().split(/\s+/); // split on ANY whitespace
+        if (words.length > 4) {
+            const firstLine = words.slice(0, 4).join(" ");
+            const secondLine = words.slice(4).join(" ");
+            return `${firstLine}<br>${secondLine}`;
+        }
+        return quote;
+    }
+
+    function updateQuotes() {
+        const day = new Date().getDate();
+        const quoteIndex = (day - 1) % quotesData.length; // Repeat every 10 days
+        headingEl.textContent = quotesData[quoteIndex].heading;
+        textEl.innerHTML = formatQuoteWithBreak(quotesData[quoteIndex].text);
+    }
+
+    updateQuotes();
+
+    setInterval(() => {
+        const now = new Date();
+        if (now.getHours() === 12 && now.getMinutes() === 0) {
+            updateQuotes();
+        }
+    }, 60000);
+</script>
 </body>
 </html>
+
 
 
 
