@@ -125,8 +125,61 @@
   50% { transform: scale(1.02); }
   100% { transform: scale(1); }
 }
-                                                                     
+element.style {
+    animation-delay: 100ms;
+}
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+}
+.text-cyber {
+    --tw-text-opacity: 1;
+    color: rgb(0 240 255 / var(--tw-text-opacity, 1));
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 5rem;
+}
+.font-cyber {
+    font-family: Orbitron, sans-serif;
+}
+.animate-fade-in-up {
+    animation: fade-in-up 2s ease-out;
+}
+.cyber-gradient-text {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #00f0ff var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(0 240 255 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #b537f2 var(--tw-gradient-to-position);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.fade-in-up {
+      font-size: 50px;
+      opacity: 0;
+      transform: translateY(30px); /* start slightly down */
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
 
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+.rounded-md {
+    border-radius: calc(var(--radius) - 2px);
+}
+.gap-1 {
+    gap: .25rem;
+}
   </style>
 
 </head>
@@ -136,9 +189,9 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold animated-text-gradient">N.KAILASH</a>
       <nav class="space-x-6 hidden md:block">
-        <a href="index.html" class="hover:text-gray-200">Home</a>
-        <a href="about.html" class="hover:text-gray-200">About</a>
-        <a href="contact.html" class="hover:text-gray-200">Contact</a>
+        <a href="index.html" class="hover:text-gray-200 font-cyber">Home</a>
+        <a href="about.html" class="hover:text-gray-200 font-cyber">About</a>
+        <a href="contact.html" class="hover:text-gray-200 font-cyber">Contact</a>
       </nav>
       <a href="signin.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90">Sign In</a>
     </div>
@@ -147,8 +200,8 @@
   <!-- Hero Section -->
   <section class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8">
     <div class="flex-1">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Welcome to My Webpage</h2>
-      <p class="mb-6 text-lg text-gray-300">Turning raw data into powerful insights with Python, C, C++, Java, HTML, CSS, JavaScript, and a mastery of Data Structures & Algorithms — shaping the future as a Data Scientist, Full-Stack Developer, Game Developer, Software Developer.</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-cyber font-bold mb-6 cyber-gradient-text fade-in-up">Welcome to My Digital World</h1>
+      <p class="mb-6 text-lg text-cyber font-cyber text-sm gap-1 rounded-md fade-in-up">Turning raw data into powerful insights with Python, C, C++, Java, HTML, CSS, JavaScript, and a mastery of Data Structures & Algorithms — shaping the future as a Data Scientist, Full-Stack Developer, Game Developer, Software Developer.</p>
       <a href="about.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90 breathing-glow-button">Get Started</a>
     </div>
     <div class="flex-1">
@@ -156,7 +209,7 @@
     </div>
   </section>
   <section class="max-w-7xl mx-auto px-4">
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in-up">
       <h3 class="quote-heading text-xl font-bold mb-2 text-align">குறள் எண் 1</h3>
       <p class="quote-text gradient-text">
         <span>அகர முதல எழுத்தெல்லாம் ஆதி</span><br>
@@ -268,6 +321,7 @@ Failure is the stepping stone to success</p>
 </script>
 </body>
 </html>
+
 
 
 
