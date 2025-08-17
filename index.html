@@ -107,6 +107,10 @@
 .social-icons .resume:hover {
   color: #00ffcc;
 }
+.neon-button {
+  color: #00fff0;
+  text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0, 0 0 20px #00fff0;
+}
     /* Gradient Text Animation */
     .gradient-text {
       font-size: 1.25rem; /* Increase text size */
@@ -237,6 +241,77 @@ element.style {
 @keyframes blinkCursor {
   50% { opacity: 0; }
 }
+    .sign-in-btn {
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffff);
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #0ff,
+               0 0 20px #0ff,
+               0 0 40px #0ff;
+  animation: glowText 2s infinite alternate;
+}
+
+.sign-in-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ff66ff, #3399ff, #33ffff);
+  box-shadow: 0 0 20px #ff00cc, 0 0 40px #3333ff, 0 0 60px #00ffff;
+}
+
+/* Neon glowing animation */
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #ff00cc,
+                 0 0 20px #ff00cc,
+                 0 0 40px #ff00cc;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+                 0 0 15px #00ffff,
+                 0 0 30px #00ffff,
+                 0 0 60px #00ffff;
+  }
+}
+.navbar-a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Glow + underline effect */
+.navbar-a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffff);
+  transition: width 0.4s ease-in-out;
+  border-radius: 2px;
+}
+
+.navbar-a:hover {
+  color: #00ffff; /* text color glow */
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.navbar-a:hover::after {
+  width: 100%; /* underline expands smoothly */
+}
   </style>
 
 </head>
@@ -245,12 +320,12 @@ element.style {
   <header class="gradient-bg animated-gradient p-4 shadow-lg">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold animated-text-gradient">N.KAILASH</a>
-      <nav class="space-x-6 hidden md:block">
+      <nav class="navbar-a space-x-6 hidden md:block">
         <a href="index.html" class="hover:text-gray-200 font-cyber">Home</a>
         <a href="about.html" class="hover:text-gray-200 font-cyber">About</a>
         <a href="contact.html" class="hover:text-gray-200 font-cyber">Contact</a>
       </nav>
-      <a href="signin.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90">Sign In</a>
+      <a href="signin.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90 sign-in-btn">Sign In</a>
     </div>
   </header>
 
@@ -409,6 +484,7 @@ type();
 </script>
 </body>
 </html>
+
 
 
 
