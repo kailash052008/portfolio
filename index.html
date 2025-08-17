@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome - Kailash Kanth</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/png" href="Elegante Logo _N.K._ en Gradiente.png">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
@@ -64,12 +65,53 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-    .social-links {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background: linear-gradient(90deg, #a18cd1, #fbc2eb);
-    }
+    .footer {
+  text-align: center;
+  padding: 30px 10px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.social-icons {
+  margin-bottom: 15px;
+}
+
+.social-icons .icon {
+  margin: 0 15px;
+  font-size: 2.2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Glow Colors */
+.social-icons .linkedin:hover {
+  color: #0a66c2;
+  text-shadow: 0 0 10px #0a66c2, 0 0 20px #0a66c2;
+}
+
+.social-icons .github:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+.social-icons .instagram:hover {
+  color: #e1306c;
+  text-shadow: 0 0 10px #e1306c, 0 0 20px #e1306c;
+}
+
+.social-icons .twitter:hover {
+  color: #1da1f2;
+  text-shadow: 0 0 10px #1da1f2, 0 0 20px #1da1f2;
+}
+.social-icons .youtube:hover {
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+.social-icons .resume:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
     /* Gradient Text Animation */
     .gradient-text {
       font-size: 1.25rem; /* Increase text size */
@@ -269,31 +311,29 @@ Failure is the stepping stone to success</p>
   </section>
 
   <!-- Stats Section -->
-  <section class="gradient-bg animated-gradient py-12">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 text-center gap-6">
-      <div>
-       <a href="https://instagram.com/kailash_.kanth" target="_blank" class="fab fa-instagram" style="font-size: 50px; color: white;"></a><br>Instagram
-
-
-      </div>
-      <div>
-        <i class="fab fa-youtube" style="font-size: 50px; color: white;"></i><br>Youtube
-      </div>
-      <div>
-        <i class="fab fa-linkedin" style="font-size: 50px; color: white;"></i><br>LinkedIn
-      </div>
-      <div>
-        <i class="fab fa-file-alt" style="font-size: 50px; color: white;"></i><br>Resume
-      </div>  
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 p-6 mt-12">
-    <div class="max-w-7xl mx-auto text-center text-gray-400">
-      <p>&copy; 2025 N.KAILASH. All rights reserved.</p>
-    </div>
-  </footer>
+  <footer class="footer">
+  <div class="social-icons">
+    <a href="https://www.instagram.com/kailash_.kanth" target="_blank" class="icon instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.youtube.com" target="_blank" class="icon youtube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" class="icon linkedin">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com" target="_blank" class="icon github">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" class="icon twitter">
+      <i class="fab fa-twitter"></i>
+    <a href="" target="_blank" class="icon resume">
+      <i class="fas fa-file-alt"></i>
+    </a>
+    </a>
+  </div>
+  <p>© 2025 N.KAILASH. All rights reserved.</p>
+</footer>
   <script>
     const words = ["Data Scientist.", "Full-Stack Developer.", "Game Developer.", "Software Developer."];
 let i = 0;
@@ -374,6 +414,7 @@ type();
 </script>
 </body>
 </html>
+
 
 
 
