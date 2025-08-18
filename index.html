@@ -428,6 +428,63 @@ element.style {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+    .quote-box{
+  position: relative;
+  width: 100%;
+  min-height: 150px;               /* responsive */
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 24px;
+  background: #1f2937;             /* matches your bg-gray-800 */
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+}
+
+.quote-front,.quote-back{
+  position:absolute; inset:0;
+  padding:24px;
+  display:grid; align-content:center; /* vertical centering */
+  z-index:2; transition:opacity .35s ease;
+}
+.quote-back{ opacity:0; color:#a5f3fc; font-style:italic; }
+
+.quote-box:hover .quote-front{ opacity:0; }
+.quote-box:hover .quote-back{  opacity:1; }
+
+/* checkerboard overlay */
+.checkerboardquote{
+  position:absolute; inset:0;
+  display:grid;
+  grid-template-columns:repeat(var(--cols,8),1fr);
+  grid-template-rows:repeat(var(--rows,6),1fr);
+  z-index:3; pointer-events:none;
+}
+.checkerboardquote .tile {
+  background: #07caed; /* blue */
+  opacity: 1;
+}
+
+/* On hover: animate tiles disappearing */
+.quote-box:hover .checkerboardquote .tile {
+  animation: tileOutquote .6s both ease-in;
+  animation-delay: var(--d, 0ms);
+}
+
+/* When not hovered: animate tiles disappearing (other direction) */
+.quote-box:not(:hover) .checkerboardquote .tile {
+  animation: tileInquote 0.6s both ease-in;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Keyframes */
+@keyframes tileOutquote {
+  0%   { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+@keyframes tileInquote {
+  0%   { opacity:0.8; }
+  100% { opacity: 0; }
+}
   </style>
 
 </head>
@@ -476,18 +533,39 @@ element.style {
 
   <!-- Features Section -->
   <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-      <h3 class="text-xl font-bold mb-2">Quote One</h3>
-      <p class="text-yellow-400">"Be who you want to be, not what others want to see; It's human nature not to realise the value of something unless they lose it."</p>
+    <div class="quote-box rounded-lg shadow-lg">
+      <div class="quote-front">
+        <h3 class="text-xl font-bold mb-2">Quote One</h3>
+        <p class="text-yellow-400">Be who you want to be, not what others want to see; It's human nature not to realise the value of something unless they lose it.</p>
+      </div>
+      <div class="quote-back">
+        <h3 class="text-xl font-bold mb-2">Quote Four</h3>
+        <p class="text-yellow-400">Happiness doesn’t come from having everything, but from appreciating little moments that make life meaningful and beautiful.</p>
+      </div>
+      <div class="checkerboardquote"></div>
     </div>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-      <h3 class="text-xl font-bold mb-2">Quote Two</h3>
-      <p class="text-yellow-400">'Fitness is not about being better than someone else… it’s about being better than you used to be."</p>
+    <div class="quote-box rounded-lg shadow-lg">
+      <div class="quote-front">
+        <h3 class="text-xl font-bold mb-2">Quote Two</h3>
+        <p class="text-yellow-400">Fitness is not about being better than someone else… it's about being better than you used to be.</p>
+      </div>
+      <div class="quote-back">
+        <h3 class="text-xl font-bold mb-2">Quote Five</h3>
+        <p class="text-yellow-400">Dreams become reality when belief fuels effort, determination overcomes doubt, and consistency outshines every excuse.</p>
+      </div>
+      <div class="checkerboardquote"></div>    
     </div>
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-      <h3 class="text-xl font-bold mb-2">Quote Three</h3>
-      <p class="text-yellow-400">Don't be afraid to fail; Be afraid of never trying.
-Failure is the stepping stone to success</p>
+    <div class="quote-box rounded-lg shadow-lg">
+      <div class="quote-front">
+        <h3 class="text-xl font-bold mb-2">Quote Three</h3>
+        <p class="text-yellow-400">Don't be afraid to fail; Be afraid of never trying.
+Failure is the stepping stone to success, Don't forget</p>
+      </div>
+      <div class="quote-back">
+        <h3 class="text-xl font-bold mb-2">Quote Six</h3>
+        <p class="text-yellow-400">Success is not built overnight; it grows steadily through patience, persistence, and the courage to keep moving forward.</p>
+      </div>
+      <div class="checkerboardquote"></div>    
     </div>
     <iframe
     src="https://www.chatbase.co/chatbot-iframe/3CXIwH0Ej0RqtrTjF5sfJ"
@@ -623,9 +701,25 @@ type();
     }
   }
 });
+    document.querySelectorAll('.quote-box').forEach(box => {
+  const grid = box.querySelector('.checkerboardquote');
+  const rows = 6, cols = 8;                 // density of tiles
+  grid.style.setProperty('--rows', rows);
+  grid.style.setProperty('--cols', cols);
+  grid.innerHTML = '';                       // build tiles
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const tile = document.createElement('div');
+      tile.className = 'tile';
+      tile.style.setProperty('--d', ((r + c) * 60) + 'ms'); // diagonal wipe
+      grid.appendChild(tile);
+    }
+  }
+});
 </script>
 </body>
 </html>
+
 
 
 
