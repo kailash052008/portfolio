@@ -513,6 +513,12 @@ element.style {
     .glitch-text::after {
       animation: glitch-slice-2 1.2s infinite linear alternate-reverse;
     }
+    .glitch-text:hover::before,
+.glitch-text:hover::after {
+  animation-play-state: paused;
+  opacity: 0;
+  visibility:hidden
+}
 
     /* Slicing keyframes */
     @keyframes glitch-slice-1 {
@@ -768,6 +774,7 @@ type();
 </script>
 </body>
 </html>
+
 
 
 
