@@ -485,6 +485,55 @@ element.style {
   0%   { opacity:0.8; }
   100% { opacity: 0; }
 }
+    .glitch-text {
+      position: relative;
+    }
+
+    /* Duplicate layers for glitch */
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      overflow: hidden;
+      pointer-events: none;   /* Make sure hover does not affect */
+    }
+
+    .glitch-text::before {
+      animation: glitch-slice-1 3s infinite linear alternate-reverse;
+    }
+
+    .glitch-text::after {
+      animation: glitch-slice-2 1.2s infinite linear alternate-reverse;
+    }
+
+    /* Slicing keyframes */
+    @keyframes glitch-slice-1 {
+      0% { clip: rect(20px, 9999px, 60px, 0); transform: translateX(-2px); }
+      5% { clip: rect(60px, 9999px, 100px, 0); transform: translateX(2px); }
+      10% { clip: rect(10px, 9999px, 50px, 0); transform: translateX(-1px); }
+      15% { clip: rect(70px, 9999px, 120px, 0); transform: translateX(1px); }
+      20% { clip: rect(40px, 9999px, 80px, 0); transform: translateX(-3px); }
+      25% { clip: rect(90px, 9999px, 140px, 0); transform: translateX(3px); }
+      30%,100% { clip: rect(0, 9999px, 0, 0); transform: translateX(0); }
+    }
+
+    @keyframes glitch-slice-2 {
+      0% { clip: rect(80px, 9999px, 120px, 0); transform: translateX(2px); }
+      5% { clip: rect(30px, 9999px, 70px, 0); transform: translateX(-2px); }
+      10% { clip: rect(100px, 9999px, 1500px, 0); transform: translateX(1px); }
+      15% { clip: rect(50px, 9999px, 90px, 0); transform: translateX(-1px); }
+      20% { clip: rect(10px, 9999px, 40px, 0); transform: translateX(3px); }
+      25% { clip: rect(60px, 9999px, 1500px, 0); transform: translateX(-3px); }
+      30%,100% { clip: rect(60, 9999px, 70, 40); transform: translateX(0); }
+    }
   </style>
 
 </head>
@@ -505,7 +554,7 @@ element.style {
   <!-- Hero Section -->
   <section class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8">
     <div class="flex-1">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-cyber font-bold mb-6 cyber-gradient-text fade-in-up logo">Welcome to My Digital World</h2>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-cyber font-bold mb-6 cyber-gradient-text fade-in-up glitch-text logo" data-text="Welcome to My Digital World">Welcome to My Digital World</h2>
       <p class="mb-6 text-lg text-cyber font-cyber text-sm gap-1 rounded-md fade-in-up">Turning raw data into powerful insights with Python, C, C++, Java, HTML, CSS, JavaScript, and a mastery of Data Structures & Algorithms — shaping the <br>future as a <span id="typewriter"></span></p>
       <a href="about.html" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 rounded-lg font-bold text-white shadow-lg hover:opacity-90 breathing-glow-button image-glow">Get Started</a>
     </div>
@@ -719,6 +768,7 @@ type();
 </script>
 </body>
 </html>
+
 
 
 
