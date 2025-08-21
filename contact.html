@@ -12,6 +12,16 @@
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color: white;
   }
+    html, body {
+  height: 100%;              /* Make body take full height */
+  display: flex;             /* Use flexbox */
+  flex-direction: column;    /* Stack content vertically */
+}
+    
+
+main {
+  flex: 1; /* Push footer to the bottom */
+}
 
   .gradient-bg {
     background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
@@ -109,6 +119,7 @@
   </header>
 
   <!-- Contact Section -->
+  <main>
   <section class="max-w-7xl mx-auto px-4 py-16">
     <h2 class="text-4xl font-extrabold mb-6">Contact Me</h2>
     <p class="text-lg text-gray-300 mb-8">
@@ -137,6 +148,7 @@
       </button>
     </form>
   </section>
+    </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -164,3 +176,4 @@
 </footer>
 </body>
 </html>
+
