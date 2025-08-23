@@ -101,6 +101,37 @@ main {
   color: #00ffcc;
   text-shadow: 0 0 1px #00ffcc, 0 0 20px #00ffcc;
 }
+    .navbar-a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Glow + underline effect */
+.navbar-a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffff);
+  transition: width 0.4s ease-in-out;
+  border-radius: 2px;
+}
+
+.navbar-a:hover {
+  color: #00ffff; /* text color glow */
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.navbar-a:hover::after {
+  width: 100%; /* underline expands smoothly */
+}
   </style>
 </head>
 <body class="font-sans">
@@ -108,7 +139,7 @@ main {
   <header class="gradient-bg p-4 shadow-lg">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold animated-text-gradient">N.KAILASH</a>
-      <nav class="space-x-6 hidden md:block">
+      <nav class="navbar-a space-x-6 hidden md:block">
         <a href="index.html" class="hover:text-gray-200">Home</a>
         <a href="about.html" class="hover:text-gray-200">About</a>
         <a href="contact.html" class="hover:text-gray-200">Contact</a>
@@ -171,3 +202,4 @@ main {
   </script>
 </body>
 </html>
+
