@@ -31,6 +31,14 @@
       from { background-position: 0 0; }
       to { background-position: 40px 40px; }
     }
+    html, body {
+  height: 100%;              /* Make body take full height */
+  display: flex;             /* Use flexbox */
+  flex-direction: column;    /* Stack content vertically */
+}
+main {
+  flex: 1; /* Push footer to the bottom */
+}
     body {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: white;
@@ -630,7 +638,7 @@ element.style {
   </div>
 </header>
 
-  <!-- Hero Section -->
+  <main>
   <section class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8">
     <div class="flex-1">
       <h2 class="text-4xl md:text-5xl lg:text-6xl lobster-regular font-bold mb-6 cyber-gradient-text fade-in-up glitch-text logo" data-text="Welcome to My Digital World">Welcome to My Digital World</h2>
@@ -711,6 +719,7 @@ Failure is the stepping stone to success, Don't forget</p>
     frameborder="0"
 ></iframe>
   </section>
+  </main>
 
   <!-- Stats Section -->
   <footer class="footer">
@@ -851,5 +860,6 @@ type();
 </body>
 
 </html>
+
 
 
